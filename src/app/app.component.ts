@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pokemon-trainer-experis';
+  
+  public username: string = '';
+
+  login() {
+    localStorage.setItem('username', this.username);
+  }
+
 }
