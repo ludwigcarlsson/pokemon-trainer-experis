@@ -8,15 +8,15 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
 
 const routes: Routes = [
   {
-    path: '/trainer',
+    path: 'trainer',
     component: TrainerComponent
   },
   {
-    path: '/catalogue',
+    path: 'catalogue',
     component: CatalogueComponent
   },
   {
-    path: '/pokemon',
+    path: 'pokemon/:id',
     component: PokemonComponent
   },
   {

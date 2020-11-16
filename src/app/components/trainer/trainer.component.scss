@@ -1,0 +1,28 @@
+$border: 1px solid black;
+
+.collected-container {
+    display: flex;
+    flex-direction: column;
+}
+.pokemon-card {
+    border: $border;
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: 125px auto auto;
+    column-gap: 10px;
+
+    img {
+        border: $border;
+        width: 125px;
+        height: 125px;
+    }
+
+    p:first-of-type {
+        font-weight: bold;
+        font-size: 24px;
+        margin-top: 0;
+    }
+}
+
