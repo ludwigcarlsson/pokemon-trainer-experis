@@ -1,6 +1,13 @@
 $border: 1px solid black;
 
+.page-container{
+}
+
 .pokedex-container{
+    margin: auto auto;
+    border: 2px solid red;
+    width: 65%;
+    height: 600px;
 
     .trainer-route {
         font-size: 24px;
@@ -13,8 +20,9 @@ $border: 1px solid black;
 
     .pokedex-information {
         display: grid; 
-        grid-template-columns: 200px 350px auto;
+        grid-template-columns: 200px 300px 300px;
         column-gap: 15px;
+        justify-content: center;
     } 
 
     .own-status {
@@ -31,9 +39,31 @@ $border: 1px solid black;
 
     .image-container {
         border: $border;
+        overflow: hidden;
     }
 
     .list-container {
         border: $border;
+        padding: 5px;
+
+        .list-item{
+            border: 1px solid black;
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 2px;
+
+            .list-name {
+                font-size: 20px;
+                line-height: 20px;
+                margin: auto;
+            }
+        }
+
+        .sprite-image {
+                width: 35px;
+                height: 35px;
+        }
     }
+    
 }

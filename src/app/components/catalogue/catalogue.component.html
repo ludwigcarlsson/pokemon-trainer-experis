@@ -1,23 +1,24 @@
-<div class="pokedex-container">
-  <div class="trainer-route">Trainer:
-    <button routerLink="/trainer">Trainer Page</button>
+<div class="page-container">
+  <div class="pokedex-container">
+    <div class="trainer-route">Trainer:
+      <button routerLink="/trainer">Trainer Page</button>
+    </div>
+    
+    <h1>Pokédex</h1>
+    <div class="pokedex-information">
+      <div class="own-status">
+        <h5>Own</h5>
+        <img class="own-image" src="#" alt="" />
+      </div>
+      <div class="image-container">
+        <img class="pokemon-image" src="" alt="" />
+      </div>
+      <div class="list-container">
+        <div class="list-item" *ngFor="let pokemon of pokemons">
+          <img class="sprite-image" src="{{pokemon.sprite}}" alt="pokemon"/>
+          <div class="list-name">{{pokemon.name}}</div>
+        </div>
+      </div>
+    </div>
   </div>
-  
-  <h1>Pokédex</h1>
-  <div class="pokedex-information">
-    <div class="own-status">
-      <h5>Own</h5>
-      <img class="own-image" src="#" alt="" />
-    </div>
-    <div class="image-container">
-      <img class="pokemon-image" src="#" alt="" />
-    </div>
-    <div class="list-container">
-      <ul>
-        <li><button></button></li>
-        <li><button></button></li>
-      </ul>
-    </div>
-  </div>
-  
 </div>
