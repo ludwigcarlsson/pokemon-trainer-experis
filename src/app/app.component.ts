@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  public isLoggedIn: boolean = false;
   public username: string = '';
 
   login() {
