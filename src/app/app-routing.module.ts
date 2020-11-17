@@ -5,6 +5,7 @@ import { TrainerComponent } from './components/trainer/trainer.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 
+const redirect = localStorage.getItem('username') ? '/trainer' : '';
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/'
+    redirectTo: redirect
   }
 ];
 
