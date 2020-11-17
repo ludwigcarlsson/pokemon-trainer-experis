@@ -1,12 +1,16 @@
 <div class="trainer-container">
-    <h1>Trainer Name</h1>
-    <h2>Collected pokemons</h2>
-    <div class="collected-container">
-        <div class="pokemon-card" *ngFor="let card of pokemoncards" routerLink='/pokemon/{{card.id}}'>
-            <img src="#" alt="pokemon-card" class="pokemon-sprite">
-            <p class="pokemon-title">{{card.title}}</p>
-            <p class="pokemon-type">Type: {{card.type}}</p>
-        </div>
+  <h1>Trainer: {{ username }}</h1>
+  <h2>Collected pokemons</h2>
+  <div class="collected-container">
+    <div
+      class="pokemon-card"
+      *ngFor="let card of pokemoncards"
+      routerLink="/pokemon/{{ card.id }}"
+    >
+      <img src="#" alt="pokemon-card" class="pokemon-sprite" />
+      <p class="pokemon-title">{{ card.title }}</p>
+      <p class="pokemon-type">Type: {{ card.type }}</p>
     </div>
-    <button type="button" routerLink="/catalogue">Collect more pokemons!</button>
+  </div>
+  <button type="button" routerLink="/catalogue">Collect more pokemons!</button>
 </div>
