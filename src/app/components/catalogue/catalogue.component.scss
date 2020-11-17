@@ -1,0 +1,39 @@
+$border: 1px solid black;
+
+.pokedex-container{
+
+    .trainer-route {
+        font-size: 24px;
+        position: absolute;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+
+    .pokedex-information {
+        display: grid; 
+        grid-template-columns: 200px 350px auto;
+        column-gap: 15px;
+    } 
+
+    .own-status {
+        border: $border;
+
+        h5{
+            text-align: center;
+            border-bottom: 1px solid black;
+            width:60%;
+            margin: 10px auto;
+            padding: 2px;
+        }
+    }
+
+    .image-container {
+        border: $border;
+    }
+
+    .list-container {
+        border: $border;
+    }
+}
