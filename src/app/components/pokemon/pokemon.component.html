@@ -1,17 +1,23 @@
 <div class="pokemon-card" id="pokemon-card">
     <div class="title">
-        <div>Name</div>
-        <div>50 HP</div>
+      
+        <div>{{pokemon.name}}</div>
+        <div>{{pokemon.stats[0].base_stat}} HP</div>
     </div>
-    <img src="#" alt="">
-    <div class="moves">
-        <div class="move">
-            <div class="attack">Dig</div>
-            <div class="damage">70</div>
+    <img src="{{pokemon.img}}" alt="">
+    <div class="size-stats"> BE: {{pokemon.baseExp}} HT:{{pokemon.height}} WT: {{pokemon.weight}}</div>
+    <div class="abilities">
+        <div class="ability" *ngFor="let knownAbility of pokemon.abilities">
+            <div class="attack">{{knownAbility.ability.name}}</div>
+            <div class="damage">{{pokemon.stats[1].base_stat}}</div>
         </div>
-        <div class="move">
-            <div class="attack">Confuse</div>
-            <div class="damage">10</div>
-        </div>
+    </div>
+    <div class="base-stats">HP: {{pokemon.stats[0].base_stat}}, 
+        Attack: {{pokemon.stats[1].base_stat}}, 
+        Defense: {{pokemon.stats[2].base_stat}},
+        Special-attack: {{pokemon.stats[3].base_stat}},
+        Special-defense: {{pokemon.stats[4].base_stat}},
+        Speed: {{pokemon.stats[5].base_stat}}
+    
     </div>
 </div>

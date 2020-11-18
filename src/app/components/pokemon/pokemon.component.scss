@@ -19,12 +19,12 @@
         border: yellow 1px solid;
     }
 
-    .moves {
+    .abilites {
         width: 100%;
         display: grid;
         grid-template-rows: auto auto;
 
-        .move {
+        .ability {
             display: grid;
             grid-template-columns: 80% auto;
             height: 125px;
