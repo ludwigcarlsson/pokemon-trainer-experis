@@ -11,10 +11,15 @@
         <img class="own-image" src="#" alt="" />
       </div>
       <div class="image-container">
-        <img class="pokemon-image" src="" alt="" />
+        <img id="pokemon-image" src="" alt="" />
+        <button type="button" id="details-btn" (click)="goToPokemon(this.currentPokemon)">See details</button>
       </div>
       <div class="list-container">
-        <div class="list-item" *ngFor="let pokemon of pokemons">
+        <div class="list-item" 
+          id="{{pokemon.name}}" 
+          *ngFor="let pokemon of pokemons" 
+          (click)="showPokemon(pokemon)"
+        >
           <img class="sprite-image" src="{{pokemon.sprite}}" alt="pokemon"/>
           <div class="list-name">{{pokemon.name}}</div>
         </div>

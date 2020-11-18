@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ShareDataService } from 'src/app/services/shareData/share-data.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private share: ShareDataService) { }
+
+  public pokemon: any = this.share.getData();
 
   ngOnInit(): void {
+    console.log(this.pokemon);
   }
 
 }
