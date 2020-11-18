@@ -10,7 +10,7 @@ export class AppComponent {
   public username: string = '';
 
   login() {
-    localStorage.setItem('username', this.username);
+    localStorage.setItem('username', this.username); // add this to a session-service instead, create logincomponent
   }
 
 }
