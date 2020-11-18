@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { SessionService } from './services/session/session.service';
+import { Router } from '@angular/router'
+ 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   
-  public username: string = '';
+  constructor (private authSession: SessionService, private router: Router) {}
 
-  login() {
-    localStorage.setItem('username', this.username); // add this to a session-service instead, create logincomponent
+  ngOnInit(): void {
+    if(this.authSession.checkLogin()) {
+      this.router.navigateByUrl('/trainer');
+    } else {
+      this.router.navigateByUrl('/login');
+    }
   }
-
+  
 }

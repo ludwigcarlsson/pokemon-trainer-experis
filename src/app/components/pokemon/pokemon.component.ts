@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShareDataService } from 'src/app/services/shareData/share-data.service';
 
 @Component({
