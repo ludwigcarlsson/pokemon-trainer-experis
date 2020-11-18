@@ -8,6 +8,7 @@ import { SessionService } from 'src/app/services/session/session.service';
   styleUrls: ['./trainer.component.scss'],
 })
 export class TrainerComponent implements OnInit {
+  public username: string = localStorage.getItem('username') || '';
   public pokemoncards: any = [
     {
       title: 'ditto',
