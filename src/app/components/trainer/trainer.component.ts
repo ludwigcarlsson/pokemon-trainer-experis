@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SessionService } from 'src/app/services/session/session.service';
 
 @Component({
   selector: 'app-trainer',
@@ -25,12 +27,11 @@ export class TrainerComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private sessionAuth: SessionService, private router: Router) {}
 
   ngOnInit(): void {
-    const container = document.getElementById('login-container');
-    if (localStorage.getItem('username') != '' && container != null) {
-      container.remove();
+    if(!this.sessionAuth.checkLogin()) {
+      this.router.navigateByUrl('/login')
     }
   }
 }

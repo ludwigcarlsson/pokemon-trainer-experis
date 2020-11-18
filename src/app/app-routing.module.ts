@@ -4,8 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TrainerComponent } from './components/trainer/trainer.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
-
-const redirect = localStorage.getItem('username') ? '/trainer' : '';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
@@ -21,9 +20,13 @@ const routes: Routes = [
     component: PokemonComponent
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: '',
     pathMatch: 'full',
-    redirectTo: redirect
+    redirectTo: '/'
   }
 ];
 

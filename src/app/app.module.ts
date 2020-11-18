@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { TrainerComponent } from './components/trainer/trainer.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrainerComponent,
     PokemonComponent,
-    CatalogueComponent
+    CatalogueComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
