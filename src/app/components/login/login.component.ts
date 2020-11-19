@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SessionService } from 'src/app/services/session/session.service';
 
@@ -17,10 +18,16 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public username: string = '';
+  loginForm: FormGroup = new FormGroup({
+    username: new FormControl('', [Validators.required, Validators.minLength(2)])
+  })
+
+  get username(): any {
+    return this.loginForm.get('username')
+  }
 
   login() {
-    this.sessionAuth.login(this.username);
+    this.sessionAuth.login(this.loginForm.get('username')?.value);
   }
 
 }
