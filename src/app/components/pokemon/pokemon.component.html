@@ -1,7 +1,7 @@
 <div class="page-container">
     <div class="pokemon-card" id="pokemon-card">
         <div class="title bold">
-        
+
             <div>{{pokemon.name}}</div>
             <div>{{pokemon.stats[0].base_stat}} HP</div>
         </div>
@@ -32,27 +32,23 @@
         <table>
             <tr>
                 <th>Type</th>
-                <td>test</td>
+                <td>{{moveInformationList[0].moveType}}</td>
             </tr>
             <tr>
                 <th>Description</th>
-                <td>test</td>
+                <td>{{moveInformationList[0].description}}</td>
             </tr>
             <tr>
                 <th>Effect</th>
-                <td>test</td>
-            </tr>
-            <tr>
-                <th>Effect Chance</th>
-                <td>test</td>
+                <td>{{moveInformationList[0].effect}}</td>
             </tr>
             <tr>
                 <th>Accuracy</th>
-                <td>test</td>
+                <td>{{moveInformationList[0].accuracy}}</td>
             </tr>
             <tr>
                 <th>Damage</th>
-                <td>test</td>
+                <td>{{moveInformationList[0].damage}}</td>
             </tr>
                        
         </table>

@@ -38,6 +38,16 @@ export class PokemonComponent implements OnInit {
   async displayMoveInformation(URL: any){
     try {
       const data = await this.api.fetchThis(URL);
+      console.log(data);
+      this.moveInformationList = [];
+      this.moveInformationList.push({
+        moveType: data.type.name,
+        description: data.flavor_text_entries[1].flavor_text,
+        effect: data.effect_entries[0].effect,
+        accuracy: data.accuracy,
+        damage: data.power
+
+      })
       
     }
     catch(e){
