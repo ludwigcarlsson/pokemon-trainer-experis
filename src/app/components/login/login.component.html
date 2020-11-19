@@ -1,5 +1,16 @@
 <div class="login-container" id="login-container">
-    <input type="text" name="username" id="username" placeholder="Enter a username..." [(ngModel)]="username">
-  
-    <button type="button" (click)=login() routerLink="/trainer">Login</button>
+    <form [formGroup]="loginForm">
+        <input type="text" name="username" id="username" placeholder="Enter a trainername..." formControlName="username">
+    </form>
+
+    <div class="error-message" *ngIf="username.invalid && (username.dirty || username.touched)">
+        <div *ngIf="username.errors.required">
+            Username is required.
+        </div>
+        <div *ngIf="username.errors.minlength">
+            Username must be atleast 2 characters long.
+        </div>
+    </div>
+
+    <button type="button" [disabled]="!loginForm.valid" (click)=login() routerLink="/trainer">Login</button>
 </div>
