@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class SessionService {
 
   public loginStatus: boolean = false;
-  public collectedPokemons: any = JSON.parse(localStorage.getItem('collectedPokemon') || '') || [];
+  public collectedPokemons: any =  localStorage.getItem('collectedPokemon') ? JSON.parse(localStorage.getItem('collectedPokemon') || '') : [];
 
   constructor() { }
 

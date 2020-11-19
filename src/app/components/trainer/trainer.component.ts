@@ -9,7 +9,7 @@ import { SessionService } from 'src/app/services/session/session.service';
 })
 export class TrainerComponent implements OnInit {
   public username: string = localStorage.getItem('username') || '';
-  public pokemoncards: any = JSON.parse(localStorage.getItem('collectedPokemon') || '');
+  public pokemoncards: any = localStorage.getItem('collectedPokemon') ? JSON.parse(localStorage.getItem('collectedPokemon') || '') : [];
 
   constructor(private sessionAuth: SessionService, private router: Router) {}
 
