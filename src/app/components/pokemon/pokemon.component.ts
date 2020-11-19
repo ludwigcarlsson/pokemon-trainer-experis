@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { ShareDataService } from 'src/app/services/shareData/share-data.service';
 
 @Component({
