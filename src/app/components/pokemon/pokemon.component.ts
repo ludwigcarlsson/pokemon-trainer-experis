@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ShareDataService } from 'src/app/services/shareData/share-data.service';
 
@@ -8,7 +9,7 @@ import { ShareDataService } from 'src/app/services/shareData/share-data.service'
 })
 export class PokemonComponent implements OnInit {
 
-  constructor(private share: ShareDataService) { }
+  constructor(private share: ShareDataService, private _location: Location) { }
 
   public pokemon: any = this.share.getData();
 
@@ -16,4 +17,8 @@ export class PokemonComponent implements OnInit {
     console.log(this.pokemon);
   }
 
+
+  goBack() {
+    this._location.back();
+  }
 }
