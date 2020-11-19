@@ -1,7 +1,6 @@
 <div class="page-container">
     <div class="pokemon-card" id="pokemon-card">
         <div class="title bold">
-
             <div>{{pokemon.name}}</div>
             <div>{{pokemon.stats[0].base_stat}} HP</div>
         </div>
@@ -25,30 +24,30 @@
     <div class="moves-container">
         <h1>Moves</h1>
         <div class="Select-container">
-            <select id="move-select">
-                <option *ngFor="let move of pokemon.moves">{{move.move.name}}</option>
+            <select id="move-select" (change)="displayMoveInformation(selectedMove.value)" #selectedMove>
+                <option value="{{move.move.url}}" *ngFor="let move of pokemon.moves">{{move.move.name}}</option>
             </select>
         </div>
         <table>
             <tr>
                 <th>Type</th>
-                <td>{{moveInformationList[0].moveType}}</td>
+                <td id="moveType"></td>
             </tr>
             <tr>
                 <th>Description</th>
-                <td>{{moveInformationList[0].description}}</td>
+                <td id="description"></td>
             </tr>
             <tr>
                 <th>Effect</th>
-                <td>{{moveInformationList[0].effect}}</td>
+                <td id="effect"></td>
             </tr>
             <tr>
                 <th>Accuracy</th>
-                <td>{{moveInformationList[0].accuracy}}</td>
+                <td id="accuracy"></td>
             </tr>
             <tr>
                 <th>Damage</th>
-                <td>{{moveInformationList[0].damage}}</td>
+                <td id="damage"></td>
             </tr>
                        
         </table>
