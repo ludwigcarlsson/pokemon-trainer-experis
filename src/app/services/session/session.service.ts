@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class SessionService {
 
   public loginStatus: boolean = false;
+  public collectedPokemons: any = JSON.parse(localStorage.getItem('collectedPokemon') || '') || [];
 
   constructor() { }
 
@@ -18,6 +19,11 @@ export class SessionService {
 
   login(username: string) {
     localStorage.setItem('username', username);
+  }
+
+  collectPokemon(pokemon: any) {
+    this.collectedPokemons.push(pokemon);
+    localStorage.setItem('collectedPokemon', JSON.stringify(this.collectedPokemons));
   }
   
 }

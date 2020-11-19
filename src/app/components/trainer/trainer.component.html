@@ -7,9 +7,11 @@
       *ngFor="let card of pokemoncards"
       routerLink="/pokemon/{{ card.id }}"
     >
-      <img src="#" alt="pokemon-card" class="pokemon-sprite" />
-      <p class="pokemon-title">{{ card.title }}</p>
-      <p class="pokemon-type">Type: {{ card.type }}</p>
+      <img src="{{card[0].pokemonImg}}" alt="pokemon-card" class="pokemon-sprite" />
+      <p class="pokemon-title">{{ card[0].pokemonName }}</p>
+      <p class="pokemon-type">Type: <span *ngFor="let type of card[0].pokemonType">{{type.type.name}} </span></p>
+   
+
     </div>
   </div>
   <button type="button" routerLink="/catalogue">Collect more pokemons!</button>

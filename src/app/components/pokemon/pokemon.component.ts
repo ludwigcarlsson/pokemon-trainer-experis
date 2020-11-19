@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
+import { SessionService } from 'src/app/services/session/session.service';
 import { ShareDataService } from 'src/app/services/shareData/share-data.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ShareDataService } from 'src/app/services/shareData/share-data.service'
 })
 export class PokemonComponent implements OnInit {
 
-  constructor(private share: ShareDataService, private _location: Location, private api: ApiService) { }
+  constructor(private share: ShareDataService, private _location: Location, private api: ApiService, private session: SessionService) { }
 
   public pokemon: any = this.share.getData();
   public moveInformationList : any = [];
@@ -73,8 +74,6 @@ export class PokemonComponent implements OnInit {
      pokemonType: this.pokemon.type,
      pokemonImg: this.pokemon.img
      });
-     console.log(this.pokemon);
-    console.log(this.userPokemons);
-
+     this.session.collectPokemon(this.userPokemons);
   }
 }
