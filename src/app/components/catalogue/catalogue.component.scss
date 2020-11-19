@@ -44,7 +44,9 @@ $border: 1px solid black;
 
         #pokemon-image {
             border: $border;
+            background-color: white;
             width: 250px;
+            height: 250px;
             margin: 100px 25px;
         }
         #details-btn {

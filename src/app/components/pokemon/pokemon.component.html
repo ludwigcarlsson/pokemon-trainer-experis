@@ -1,21 +1,22 @@
 <div class="page-container">
     <div class="pokemon-card" id="pokemon-card">
-        <div class="title">
-        
+        <div class="title bold">
+
             <div>{{pokemon.name}}</div>
             <div>{{pokemon.stats[0].base_stat}} HP</div>
         </div>
         <img src="{{pokemon.img}}" alt="">
         <div class="size-stats"> BE: {{pokemon.baseExp}} HT: {{pokemon.height}} WT: {{pokemon.weight}}</div>
         <div class="abilities">
-            <div class="ability" *ngFor="let knownAbility of pokemon.abilities">
-                <div class="attack">{{knownAbility.ability.name}}</div>
-                <div class="damage">{{pokemon.stats[1].base_stat}}</div> <!--fetch the correct info: fetch this ability and fetch this move-->
+            <div class="ability" *ngFor="let ability of abilities">
+                <div class="attack bold center-align">{{ability.name}}</div>
+                <div class="description"><p>{{ability.description}}</p></div> <!--fetch the correct info: fetch this ability and fetch this move-->
+                <div class="border"></div>
             </div>
         </div>
         <div class="base-stats-container">
             <div class="stat-item" *ngFor="let stat of pokemon.stats">
-                <div class="stat-name">{{stat.stat.name}}: </div>
+                <div class="stat-name bold">{{stat.stat.name}}: </div>
                 <div class="stat-value">{{stat.base_stat}} </div>
             </div>
         </div>
@@ -24,34 +25,30 @@
     <div class="moves-container">
         <h1>Moves</h1>
         <div class="Select-container">
-            <select>
-                <option value="test" *ngFor="let move of pokemon.moves">{{move.move.name}}</option>
+            <select id="move-select">
+                <option *ngFor="let move of pokemon.moves">{{move.move.name}}</option>
             </select>
         </div>
         <table>
             <tr>
                 <th>Type</th>
-                <td>test</td>
+                <td>{{moveInformationList[0].moveType}}</td>
             </tr>
             <tr>
                 <th>Description</th>
-                <td>test</td>
+                <td>{{moveInformationList[0].description}}</td>
             </tr>
             <tr>
                 <th>Effect</th>
-                <td>test</td>
-            </tr>
-            <tr>
-                <th>Effect Chance</th>
-                <td>test</td>
+                <td>{{moveInformationList[0].effect}}</td>
             </tr>
             <tr>
                 <th>Accuracy</th>
-                <td>test</td>
+                <td>{{moveInformationList[0].accuracy}}</td>
             </tr>
             <tr>
                 <th>Damage</th>
-                <td>test</td>
+                <td>{{moveInformationList[0].damage}}</td>
             </tr>
                        
         </table>
