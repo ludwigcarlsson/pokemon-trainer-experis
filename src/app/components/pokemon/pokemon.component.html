@@ -1,23 +1,61 @@
-<div class="pokemon-card" id="pokemon-card">
-    <div class="title">
-      
-        <div>{{pokemon.name}}</div>
-        <div>{{pokemon.stats[0].base_stat}} HP</div>
-    </div>
-    <img src="{{pokemon.img}}" alt="">
-    <div class="size-stats"> BE: {{pokemon.baseExp}} HT:{{pokemon.height}} WT: {{pokemon.weight}}</div>
-    <div class="abilities">
-        <div class="ability" *ngFor="let knownAbility of pokemon.abilities">
-            <div class="attack">{{knownAbility.ability.name}}</div>
-            <div class="damage">{{pokemon.stats[1].base_stat}}</div>
+<div class="page-container">
+    <div class="pokemon-card" id="pokemon-card">
+        <div class="title">
+        
+            <div>{{pokemon.name}}</div>
+            <div>{{pokemon.stats[0].base_stat}} HP</div>
+        </div>
+        <img src="{{pokemon.img}}" alt="">
+        <div class="size-stats"> BE: {{pokemon.baseExp}} HT: {{pokemon.height}} WT: {{pokemon.weight}}</div>
+        <div class="abilities">
+            <div class="ability" *ngFor="let knownAbility of pokemon.abilities">
+                <div class="attack">{{knownAbility.ability.name}}</div>
+                <div class="damage">{{pokemon.stats[1].base_stat}}</div> <!--fetch the correct info: fetch this ability and fetch this move-->
+            </div>
+        </div>
+        <div class="base-stats-container">
+            <div class="stat-item" *ngFor="let stat of pokemon.stats">
+                <div class="stat-name">{{stat.stat.name}}: </div>
+                <div class="stat-value">{{stat.base_stat}} </div>
+            </div>
         </div>
     </div>
-    <div class="base-stats">HP: {{pokemon.stats[0].base_stat}}, 
-        Attack: {{pokemon.stats[1].base_stat}}, 
-        Defense: {{pokemon.stats[2].base_stat}},
-        Special-attack: {{pokemon.stats[3].base_stat}},
-        Special-defense: {{pokemon.stats[4].base_stat}},
-        Speed: {{pokemon.stats[5].base_stat}}
-    
+    <button type="button" class="collect-btn">Collect {{pokemon.name}}</button>
+    <div class="moves-container">
+        <h1>Moves</h1>
+        <div class="Select-container">
+            <select>
+                <option value="test" *ngFor="let move of pokemon.moves">{{move.move.name}}</option>
+            </select>
+        </div>
+        <table>
+            <tr>
+                <th>Type</th>
+                <td>test</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>test</td>
+            </tr>
+            <tr>
+                <th>Effect</th>
+                <td>test</td>
+            </tr>
+            <tr>
+                <th>Effect Chance</th>
+                <td>test</td>
+            </tr>
+            <tr>
+                <th>Accuracy</th>
+                <td>test</td>
+            </tr>
+            <tr>
+                <th>Damage</th>
+                <td>test</td>
+            </tr>
+                       
+        </table>
     </div>
+    <button type="button" class="back-btn" (click)="goBack()">Go Back</button>
 </div>
+<!--type.name & flavor_text & effect effect_chance & accuracy & power=damage-->
