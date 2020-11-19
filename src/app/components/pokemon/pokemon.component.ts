@@ -15,30 +15,36 @@ export class PokemonComponent implements OnInit {
   public pokemon: any = this.share.getData();
   public moveInformationList : any = [];
   public abilities : any = [];
-  public selectedMove: any;
   
   ngOnInit(): void {
     for (let i = 0; i <= 1 ; i++){
       this.displayAbilityInformation(this.pokemon.abilities[i].ability.url);
     }
-
     this.displayMoveInformation(this.pokemon.moves[0].move.url);
-    const select = document.getElementById("move-select");
 
-    select?.addEventListener("change", function() {
-      
-    });
   }
-
 
   goBack() {
     this._location.back();
   }
 
+  initInformation() {
+    const moveTypeCell: any = document.getElementById('moveType');
+    const descriptionCell: any = document.getElementById('description');
+    const effectCell: any = document.getElementById('effect');
+    const accuracyCell: any = document.getElementById('accuracy');
+    const damageCell: any = document.getElementById('damage');
+    
+    moveTypeCell.innerHTML = this.moveInformationList[0].moveType;
+    descriptionCell.innerHTML = this.moveInformationList[0].description;
+    effectCell.innerHTML = this.moveInformationList[0].effect;
+    accuracyCell.innerHTML = this.moveInformationList[0].accuracy;
+    damageCell.innerHTML = this.moveInformationList[0].damage;
+  }
+
   async displayMoveInformation(URL: any){
     try {
       const data = await this.api.fetchThis(URL);
-      console.log(data);
       this.moveInformationList = [];
       this.moveInformationList.push({
         moveType: data.type.name,
@@ -46,8 +52,9 @@ export class PokemonComponent implements OnInit {
         effect: data.effect_entries[0].effect,
         accuracy: data.accuracy,
         damage: data.power
-
-      })
+      });
+      
+      this.initInformation();
       
     }
     catch(e){
