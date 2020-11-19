@@ -9,27 +9,15 @@ import { SessionService } from 'src/app/services/session/session.service';
 })
 export class TrainerComponent implements OnInit {
   public username: string = localStorage.getItem('username') || '';
-  public pokemoncards: any = [
-    {
-      title: 'ditto',
-      type: 'normal',
-      id: 1,
-    },
-    {
-      title: 'eevee',
-      type: 'normal',
-      id: 2,
-    },
-    {
-      title: 'pidgey',
-      type: 'normal',
-      id: 3,
-    },
-  ];
+  public pokemoncards: any = JSON.parse(localStorage.getItem('collectedPokemon') || '');
 
   constructor(private sessionAuth: SessionService, private router: Router) {}
 
   ngOnInit(): void {
+    
+    console.log(this.pokemoncards);
+    
+
     if(!this.sessionAuth.checkLogin()) {
       this.router.navigateByUrl('/login')
     }
