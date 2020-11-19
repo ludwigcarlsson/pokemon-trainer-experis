@@ -14,17 +14,8 @@ export class TrainerComponent implements OnInit {
       title: 'ditto',
       type: 'normal',
       id: 1,
-    },
-    {
-      title: 'eevee',
-      type: 'normal',
-      id: 2,
-    },
-    {
-      title: 'pidgey',
-      type: 'normal',
-      id: 3,
-    },
+    }
+    
   ];
 
   constructor(private sessionAuth: SessionService, private router: Router) {}
