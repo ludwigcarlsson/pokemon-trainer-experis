@@ -30,7 +30,7 @@ export class CatalogueComponent implements OnInit {
 
   async displayThisPokemon(URL: any) {
     try {
-      const data = await this.api.fetchThisPokemon(URL)
+      const data = await this.api.fetchThis(URL)
       
       this.pokemons.push({
         name: data.name,

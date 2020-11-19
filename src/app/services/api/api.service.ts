@@ -16,9 +16,10 @@ export class ApiService {
       .toPromise();
   }
 
-  fetchThisPokemon(URL: any): Promise<any> {
+  fetchThis(URL: any): Promise<any> {
     return this.http
       .get(URL)
       .toPromise();
   }
+
 }

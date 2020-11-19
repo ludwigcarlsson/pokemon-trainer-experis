@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api/api.service';
 import { ShareDataService } from 'src/app/services/shareData/share-data.service';
 
 @Component({
@@ -9,16 +10,52 @@ import { ShareDataService } from 'src/app/services/shareData/share-data.service'
 })
 export class PokemonComponent implements OnInit {
 
-  constructor(private share: ShareDataService, private _location: Location) { }
+  constructor(private share: ShareDataService, private _location: Location, private api: ApiService) { }
 
   public pokemon: any = this.share.getData();
-
+  public moveInformationList : any = [];
+  public abilities : any = [];
+  public selectedMove: any;
+  
   ngOnInit(): void {
-    console.log(this.pokemon);
+    for (let i = 0; i <= 1 ; i++){
+      this.displayAbilityInformation(this.pokemon.abilities[i].ability.url);
+    }
+
+    this.displayMoveInformation(this.pokemon.moves[0].move.url);
+    const select = document.getElementById("move-select");
+
+    select?.addEventListener("change", function() {
+      
+    });
   }
 
 
   goBack() {
     this._location.back();
+  }
+
+  async displayMoveInformation(URL: any){
+    try {
+      const data = await this.api.fetchThis(URL);
+      
+    }
+    catch(e){
+      console.log(e)
+    }
+  }
+
+   async displayAbilityInformation(URL: any){
+    try {
+      const data = await this.api.fetchThis(URL);
+
+      this.abilities.push({
+        name: data.name,
+        description: data.flavor_text_entries[0].flavor_text
+      });
+    }
+    catch(e){
+      console.log(e)
+    }
   }
 }
