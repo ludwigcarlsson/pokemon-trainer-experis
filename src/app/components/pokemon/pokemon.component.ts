@@ -84,6 +84,12 @@ export class PokemonComponent implements OnInit {
   }
 
   addPokemonToUserCollection(){
-    this.session.collectPokemon(this.pokemon);
+    const collectBtn: any = document.getElementById('collect-btn');
+    
+    if(!collectBtn.disabled) {
+      this.session.collectPokemon(this.pokemon);
+    }
+    collectBtn.innerHTML = "Collected";
+    collectBtn.disabled = true;
   }
 }

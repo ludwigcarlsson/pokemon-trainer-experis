@@ -13,6 +13,7 @@
                 <div class="border"></div>
             </div>
         </div>
+        <button type="button" class="collect-btn" id="collect-btn" [disabled]="!loginStatus" (click)='addPokemonToUserCollection()'>Collect {{pokemon.name}}</button>
         <div class="base-stats-container">
             <div class="stat-item" *ngFor="let stat of pokemon.stats">
                 <div class="stat-name bold">{{stat.stat.name}}: </div>
@@ -20,10 +21,9 @@
             </div>
         </div>
     </div>
-    <button type="button" class="collect-btn" id="collect-btn" [disabled]="!loginStatus" (click)='addPokemonToUserCollection()'>Collect {{pokemon.name}}</button>
     <div class="moves-container">
-        <h1>Moves</h1>
-        <div class="Select-container">
+        <h1>Moves for {{pokemon.name}}</h1>
+        <div class="select-container">
             <select id="move-select" (change)="displayMoveInformation(selectedMove.value)" #selectedMove>
                 <option value="{{move.move.url}}" *ngFor="let move of pokemon.moves">{{move.move.name}}</option>
             </select>
@@ -53,5 +53,6 @@
         </table>
     </div>
     <button type="button" class="back-btn" (click)="goBack()">Go Back</button>
+    <app-logout></app-logout>
 </div>
-<app-logout></app-logout>
+
