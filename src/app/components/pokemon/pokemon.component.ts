@@ -83,9 +83,9 @@ export class PokemonComponent implements OnInit {
 
     this.userPokemons.push({
       pokemonName:this.pokemon.name,
-     pokemonType: this.pokemon.type,
-     pokemonImg: this.pokemon.img
-     });
-     this.session.collectPokemon(this.userPokemons);
+      pokemonType: this.pokemon.type,
+      pokemonImg: this.pokemon.img
+    });
+    this.session.collectPokemon(this.userPokemons);
   }
 }

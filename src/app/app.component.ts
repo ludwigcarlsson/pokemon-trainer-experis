@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from './services/session/session.service';
-import { Router } from '@angular/router'
  
 @Component({
   selector: 'app-root',
@@ -9,14 +7,9 @@ import { Router } from '@angular/router'
 })
 export class AppComponent implements OnInit {
   
-  constructor (private authSession: SessionService, private router: Router) {}
+  constructor () {}
 
   ngOnInit(): void {
-    if(this.authSession.checkLogin()) {
-      this.router.navigateByUrl('/trainer');
-    } else {
-      this.router.navigateByUrl('/login');
-    }
   }
   
 }
