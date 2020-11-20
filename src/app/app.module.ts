@@ -9,6 +9,7 @@ import { TrainerComponent } from './components/trainer/trainer.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LoginComponent } from './components/login/login.component';
     TrainerComponent,
     PokemonComponent,
     CatalogueComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

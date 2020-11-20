@@ -13,6 +13,8 @@ export class SessionService {
   checkLogin(): boolean {
     if (localStorage.getItem('username')) {
       this.loginStatus = true;
+    } else {
+      this.loginStatus = false;
     }
     return this.loginStatus;
   }
