@@ -1,5 +1,12 @@
 $border: 1px solid black;
 
+@font-face {
+    font-family: 'Pokemon Solid Normal';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Pokemon Solid Normal'), url('../../../assets/fonts/Pokemon\ Solid.woff') format('woff');
+}
+
 .pokedex-container{
     margin: auto auto;
     border: 2px solid red;
@@ -17,6 +24,9 @@ $border: 1px solid black;
     
     h1 {
         text-align: center;
+        font-weight: lighter;
+        font-size: 40px;
+        font-family: 'Pokemon Solid Normal';
     }
 
     .pokedex-information {
