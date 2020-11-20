@@ -5,11 +5,13 @@ import { TrainerComponent } from './components/trainer/trainer.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: 'trainer',
-    component: TrainerComponent
+    component: TrainerComponent,
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'catalogue',
@@ -26,7 +28,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/'
+    redirectTo: '/login'
   }
 ];
 
