@@ -1,8 +1,5 @@
 $border: 1px solid black;
 
-.page-container{
-}
-
 .pokedex-container{
     margin: auto auto;
     border: 2px solid red;
@@ -10,8 +7,12 @@ $border: 1px solid black;
     height: 600px;
 
     .trainer-route {
-        font-size: 24px;
-        position: absolute;
+        float: left;
+        margin-top: 5px;
+    }
+    .logout-btn {
+        float: right;
+        margin-top: 5px;
     }
     
     h1 {

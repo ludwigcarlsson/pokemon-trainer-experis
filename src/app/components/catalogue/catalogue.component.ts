@@ -9,7 +9,7 @@ import { ShareDataService } from 'src/app/services/shareData/share-data.service'
   styleUrls: ['./catalogue.component.scss']
 })
 export class CatalogueComponent implements OnInit {
-
+  public username: string = localStorage.getItem("username") || "";
   public pokemons: any = [];
   public currentPokemon: any = [];
 

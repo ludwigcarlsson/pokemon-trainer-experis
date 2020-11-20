@@ -1,9 +1,11 @@
 <div class="page-container">
   <div class="pokedex-container">
-    <div class="trainer-route">Trainer:
-      <button routerLink="/trainer">Trainer Page</button>
+    <div class="trainer-route">
+      <button routerLink="/trainer">{{username}}</button>
     </div>
-    
+    <div class="logout-btn">
+      <app-logout></app-logout>
+    </div>
     <h1>Pokédex</h1>
     <div class="pokedex-information">
       <div class="own-status">
@@ -27,4 +29,4 @@
     </div>
   </div>
 </div>
-<app-logout></app-logout>
+
