@@ -27,5 +27,10 @@ export class SessionService {
     this.collectedPokemons.push(pokemon);
     localStorage.setItem('collectedPokemon', JSON.stringify(this.collectedPokemons));
   }
+
+  clearPokemonCollection() {
+    this.collectedPokemons = [];
+    localStorage.removeItem('collectedPokemon');
+  }
   
 }
