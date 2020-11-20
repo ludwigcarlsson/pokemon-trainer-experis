@@ -13,6 +13,7 @@ export class PokemonComponent implements OnInit {
 
   constructor(private share: ShareDataService, private _location: Location, private api: ApiService, private session: SessionService) { }
 
+  public loginStatus: boolean = false;
   public pokemon: any = this.share.getData();
   public moveInformationList : any = [];
   public abilities : any = [];
@@ -23,7 +24,11 @@ export class PokemonComponent implements OnInit {
       this.displayAbilityInformation(this.pokemon.abilities[i].ability.url);
     }
     this.displayMoveInformation(this.pokemon.moves[0].move.url);
-    
+    if (this.session.checkLogin()) {
+      this.loginStatus = true; 
+    } else {
+      this.loginStatus = false;
+    }
   }
 
   goBack() {

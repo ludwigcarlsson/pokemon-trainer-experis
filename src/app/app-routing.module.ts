@@ -6,7 +6,6 @@ import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth/auth.guard';
-import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -16,19 +15,17 @@ const routes: Routes = [
   },
   {
     path: 'catalogue',
-    component: CatalogueComponent
+    component: CatalogueComponent,
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'pokemon/:name',
-    component: PokemonComponent
+    component: PokemonComponent,
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'login',
     component: LoginComponent
-  },
-  {
-    path: 'logout',
-    component: LogoutComponent
   },
   {
     path: '',
