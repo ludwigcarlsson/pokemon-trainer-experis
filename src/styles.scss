@@ -15,4 +15,8 @@ button {
         background-color: #FF0000;
         color:white;
     }
+    &:disabled {
+        background-color: rgba($color: #CC0000, $alpha: 0.6);
+        cursor: unset;
+    }
 }
