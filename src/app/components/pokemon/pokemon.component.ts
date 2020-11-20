@@ -17,14 +17,13 @@ export class PokemonComponent implements OnInit {
   public moveInformationList : any = [];
   public abilities : any = [];
   public selectedMove: any;
-  public userPokemons: any = [];
 
   ngOnInit(): void {
     for (let i = 0; i <= 1 ; i++){
       this.displayAbilityInformation(this.pokemon.abilities[i].ability.url);
     }
     this.displayMoveInformation(this.pokemon.moves[0].move.url);
-
+    
   }
 
   goBack() {
@@ -80,12 +79,6 @@ export class PokemonComponent implements OnInit {
   }
 
   addPokemonToUserCollection(){
-
-    this.userPokemons.push({
-      pokemonName:this.pokemon.name,
-      pokemonType: this.pokemon.type,
-      pokemonImg: this.pokemon.img
-    });
-    this.session.collectPokemon(this.userPokemons);
+    this.session.collectPokemon(this.pokemon);
   }
 }

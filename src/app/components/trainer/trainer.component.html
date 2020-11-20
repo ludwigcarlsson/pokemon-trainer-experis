@@ -5,14 +5,15 @@
     <div
       class="pokemon-card"
       *ngFor="let card of pokemoncards"
-      routerLink="/pokemon/{{ card.id }}"
+      (click)="goToPokemon(card)"
     >
-      <img src="{{card[0].pokemonImg}}" alt="pokemon-card" class="pokemon-sprite" />
-      <p class="pokemon-title">{{ card[0].pokemonName }}</p>
-      <p class="pokemon-type">Type: <span *ngFor="let type of card[0].pokemonType">{{type.type.name}} </span></p>
+      <img src="{{card.img}}" alt="pokemon-card" class="pokemon-sprite" />
+      <p class="pokemon-title">{{ card.name }}</p>
+      <p class="pokemon-type">Type: <span *ngFor="let type of card.type">{{type.type.name}} </span></p>
    
 
     </div>
   </div>
   <button type="button" routerLink="/catalogue">Collect more pokemons!</button>
+  <button type="button" [disabled]="!collectionStatus" (click)="clearPokemonCollection()">Release Pokemons</button>
 </div>
