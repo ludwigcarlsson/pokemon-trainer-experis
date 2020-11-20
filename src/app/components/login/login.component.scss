@@ -1,22 +1,23 @@
 .login-container {
+    display: grid;
+    grid-template-columns: 30% 10%;
+    column-gap: 10px;
+    justify-content: center;
+    margin-top: 25%;
+
+
     input {
-        width: 40%;
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: rgba($color: teal, $alpha: 0.8);
+        width: 100%;
+        background-color: rgba($color: black, $alpha: 0.3);
         color: white;
         border: none;
         border-bottom: 2px solid black;
         font-size: 36px;
     }
-    .error-message {
-        color: red;
-        position: absolute;
-        font-weight: bold;
-        left: 50%;
-        top: 32%;
-        transform: translateX(-50%);
-    }
+}
+.error-message {
+    margin-top: 5px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
 }
