@@ -22,8 +22,8 @@
         </div>
     </div>
     <div class="moves-container">
-        <h1>Moves</h1>
-        <div class="Select-container">
+        <h1>Moves for {{pokemon.name}}</h1>
+        <div class="select-container">
             <select id="move-select" (change)="displayMoveInformation(selectedMove.value)" #selectedMove>
                 <option value="{{move.move.url}}" *ngFor="let move of pokemon.moves">{{move.move.name}}</option>
             </select>
