@@ -15,13 +15,11 @@ const routes: Routes = [
   },
   {
     path: 'catalogue',
-    component: CatalogueComponent,
-    canActivate: [ AuthGuard ]
+    component: CatalogueComponent
   },
   {
     path: 'pokemon/:name',
-    component: PokemonComponent,
-    canActivate: [ AuthGuard ]
+    component: PokemonComponent
   },
   {
     path: 'login',
