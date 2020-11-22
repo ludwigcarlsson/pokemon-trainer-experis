@@ -1,7 +1,13 @@
 <div class="trainer-container">
-  <h1>Trainer: {{ username }}</h1>
-  <h2>Collected pokemons</h2>
+  <h1 class="trainer-name">Trainer: {{ username }}</h1>
+  <div class="trainer-btns">
+    <button type="button" routerLink="/catalogue">Collect more pokemons!</button>
+    <button type="button" [disabled]="!collectionStatus" (click)="clearPokemonCollection()">Release Pokemons</button>
+    <app-logout></app-logout>
+  </div>
   <div class="collected-container">
+    <h2>Collected pokemons:</h2>
+    <p *ngIf="!collectionStatus">No pokemons collected.</p>
     <div
       class="pokemon-card"
       *ngFor="let card of pokemoncards"
@@ -10,11 +16,7 @@
       <img src="{{card.img}}" alt="pokemon-card" class="pokemon-sprite" />
       <p class="pokemon-title">{{ card.name }}</p>
       <p class="pokemon-type">Type: <span *ngFor="let type of card.type">{{type.type.name}} </span></p>
-   
-
     </div>
   </div>
-  <button type="button" routerLink="/catalogue">Collect more pokemons!</button>
-  <button type="button" [disabled]="!collectionStatus" (click)="clearPokemonCollection()">Release Pokemons</button>
-  <app-logout></app-logout>
+  
 </div>
