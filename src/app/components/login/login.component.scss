@@ -8,11 +8,18 @@
 
     input {
         width: 100%;
-        background-color: rgba($color: black, $alpha: 0.3);
+        background-color: rgba($color: black, $alpha: 0.5);
         color: white;
         border: none;
         border-bottom: 2px solid black;
-        font-size: 36px;
+        font-size: 32px;
+
+        &::placeholder {
+            color: white;
+        }
+        &:focus {
+            background-color: rgba($color: black, $alpha: 0.5);
+        }
     }
 }
 .error-message {
