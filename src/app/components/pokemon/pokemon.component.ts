@@ -20,25 +20,25 @@ export class PokemonComponent implements OnInit {
   public selectedMove: any;
 
   ngOnInit(): void {
-    if (this.pokemon === undefined) {
+    if (this.pokemon === undefined) { //Sends the user back to previous page when refreshing the page
       this.goBack();      
     } else {    
-      for (let i = 0; i <= 1 ; i++){
-        this.displayAbilityInformation(this.pokemon.abilities[i].ability.url);
+      for (let i = 0; i <= 1 ; i++){ 
+        this.displayAbilityInformation(this.pokemon.abilities[i].ability.url); // Displays the two abilities for which a pokemon has
       }
-      this.displayMoveInformation(this.pokemon.moves[0].move.url);
-      if (this.session.checkLogin()) {      
+      this.displayMoveInformation(this.pokemon.moves[0].move.url); //displays the information for a specific move for the targeted pokemon
+      if (this.session.checkLogin()) {     //checks if the user is logged in or not
         this.loginStatus = true; 
       } else {
         this.loginStatus = false;
       }
     }
   }
-
+      // sends the user back to previous page
   goBack() {
     this._location.back();
   }
-
+    // Adds & displays the information in the movetable for the pokemon for when initialised, sets the index 0 as default value
   initInformation() {
     const moveTypeCell: any = document.getElementById('moveType');
     const descriptionCell: any = document.getElementById('description');
@@ -52,7 +52,7 @@ export class PokemonComponent implements OnInit {
     accuracyCell.innerHTML = this.moveInformationList[0].accuracy;
     damageCell.innerHTML = this.moveInformationList[0].damage;
   }
-
+    //changes the moveinformation depending on which move-option is selected in the dropdown list
   async displayMoveInformation(URL: any){
     try {
       const data = await this.api.fetchThis(URL);
@@ -72,7 +72,7 @@ export class PokemonComponent implements OnInit {
       console.log(e)
     }
   }
-
+    //Displays the name and description of the abilities for a specific pokemon
    async displayAbilityInformation(URL: any){
     try {
       const data = await this.api.fetchThis(URL);
@@ -86,7 +86,7 @@ export class PokemonComponent implements OnInit {
       console.log(e)
     }
   }
-
+    // adds the specific pokemon to a local storage list for the user
   addPokemonToUserCollection(){
     const collectBtn: any = document.getElementById('collect-btn');
     

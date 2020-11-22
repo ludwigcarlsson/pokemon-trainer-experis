@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+    //plays the audio of a specific audio file.
   playAudio(){
     this.audio.src = "../assets/audio/pokemon-song.mp3"
     this.audio.volume = 0.05;
@@ -22,7 +22,8 @@ export class AppComponent implements OnInit {
     this.audio.loop = true;
     this.audio.play();
   }
-
+  // When the user clicks the music button the audio will start. Then it has a 
+  // toggle function for setting the volume to 0 and 0.05.
   toggleAudio() {
     if(!this.started){
       this.playAudio();

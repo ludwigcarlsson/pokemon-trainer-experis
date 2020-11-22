@@ -9,24 +9,24 @@ import { ShareDataService } from 'src/app/services/shareData/share-data.service'
   styleUrls: ['./trainer.component.scss'],
 })
 export class TrainerComponent implements OnInit {
-  public username: string = localStorage.getItem('username') || '';
-  public pokemoncards: any = localStorage.getItem('collectedPokemon') ? JSON.parse(localStorage.getItem('collectedPokemon') || '') : [];
+  public username: string = localStorage.getItem('username') || ''; // get username if exists in localstorage
+  public pokemoncards: any = localStorage.getItem('collectedPokemon') ? JSON.parse(localStorage.getItem('collectedPokemon') || '') : []; // get data about collectedpokemon from localstorage if set
   public collectionStatus: boolean = false;
 
   constructor(private share: ShareDataService, private router: Router, private session: SessionService) {}
 
   ngOnInit(): void {
-    if (this.pokemoncards.length > 0) {
+    if (this.pokemoncards.length > 0) { // enables a button and removes a paragraph by checking if there are collected pokemons
       this.collectionStatus = true;
     }    
   }
 
-  goToPokemon(pokemon: any) {
+  goToPokemon(pokemon: any) { // redirect to clicked pokemon
     this.share.setData(pokemon);
     this.router.navigateByUrl(`/pokemon/${pokemon.name}`);
   }
 
-  clearPokemonCollection() {
+  clearPokemonCollection() { // clear pokemon collection in localstorage
     this.session.clearPokemonCollection();
     this.router.navigateByUrl('/');
   }

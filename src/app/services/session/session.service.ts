@@ -10,7 +10,7 @@ export class SessionService {
 
   constructor() { }
 
-  checkLogin(): boolean {
+  checkLogin(): boolean { // check localstorage for a value with the specified key, adjust loginStatus accordingly
     if (localStorage.getItem('username')) {
       this.loginStatus = true;
     } else {
@@ -19,16 +19,16 @@ export class SessionService {
     return this.loginStatus;
   }
 
-  login(username: string) {
+  login(username: string) { // save username to localstorage
     localStorage.setItem('username', username);
   }
 
-  collectPokemon(pokemon: any) {
+  collectPokemon(pokemon: any) { // save pokemon to list in localstorage
     this.collectedPokemons.push(pokemon);
     localStorage.setItem('collectedPokemon', JSON.stringify(this.collectedPokemons));
   }
 
-  clearPokemonCollection() {
+  clearPokemonCollection() { // clear list of collected pokemons in localstorage
     this.collectedPokemons = [];
     localStorage.removeItem('collectedPokemon');
   }
