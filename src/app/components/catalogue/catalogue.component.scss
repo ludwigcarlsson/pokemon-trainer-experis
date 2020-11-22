@@ -12,7 +12,7 @@ $border: 1px solid black;
     width: 700px;
     height: 650px;
     border-radius: 10px;
-    background-color: rgba($color: #000000, $alpha: 0.2);
+    background-color: rgba($color: #000000, $alpha: 0.7);
 
     .pokedex-header {
         display: flex;
@@ -47,7 +47,7 @@ $border: 1px solid black;
     
     .image-container {
         border-radius: 10px;
-        background-color: rgba($color: #000000, $alpha: 0.2);
+        background-color: rgba($color: #fff, $alpha: 0.2);
         width: 300px;
 
         #pokemon-image {
@@ -65,18 +65,17 @@ $border: 1px solid black;
 
     .list-container {
         border-radius: 10px;
-        background-color: rgba($color: #000000, $alpha: 0.2);
         width: 300px;
         color: white;
         padding: 5px;
 
         .list-item{
             border-radius: 10px;
-            background-color: rgba($color: #000000, $alpha: 0.2);
+            background-color: rgba($color: #fff, $alpha: 0.4);
             padding: 5px;
             display: flex;
             flex-direction: row;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
             cursor: pointer;
             transition: .3s ease-in-out;
 
