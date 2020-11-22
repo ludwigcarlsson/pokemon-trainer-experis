@@ -8,79 +8,81 @@ $border: 1px solid black;
 }
 
 .pokedex-container{
-    margin: auto auto;
-    border: 2px solid red;
-    width: 65%;
-    height: 600px;
+    margin: 50px auto;
+    width: 700px;
+    height: 650px;
+    border-radius: 10px;
+    background-color: rgba($color: #000000, $alpha: 0.2);
 
-    .trainer-route {
-        float: left;
-        margin-top: 5px;
-    }
-    .logout-btn {
-        float: right;
-        margin-top: 5px;
+    .pokedex-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+        .pokedex-title {
+            text-align: center;
+            font-weight: lighter;
+            -webkit-text-fill-color:#FFDE00; 
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #3B4CCA;
+            letter-spacing: 3px;
+            font-size: 40px;
+            font-family: 'Pokemon Solid Normal';
+            margin: 0;
+        }
+        .pokedex-btns {
+            margin-top: 50px;
+        }
     }
     
-    h1 {
-        text-align: center;
-        font-weight: lighter;
-        font-size: 40px;
-        font-family: 'Pokemon Solid Normal';
-    }
+    
+    
 
     .pokedex-information {
         display: grid; 
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(2, auto);
         column-gap: 15px;
         justify-content: center;
     } 
-
-    .own-status {
-        border: $border;
-        width: 200px;
-
-        h5{
-            text-align: center;
-            border-bottom: 1px solid black;
-            width:60%;
-            margin: 10px auto;
-            padding: 2px;
-        }
-    }
-
+    
     .image-container {
-        border: $border;
+        border-radius: 10px;
+        background-color: rgba($color: #000000, $alpha: 0.2);
         width: 300px;
 
         #pokemon-image {
-            border: $border;
-            background-color: white;
+            border-radius: 10px;
+            background-color: rgba($color: #000000, $alpha: 0.2);
             width: 250px;
             height: 250px;
-            margin: 100px 25px;
+            margin: 100px 25px 50px 25px;
         }
         #details-btn {
             display: none;
-            margin:auto;
+            margin: 0 auto;
         }
     }
 
     .list-container {
-        border: $border;
+        border-radius: 10px;
+        background-color: rgba($color: #000000, $alpha: 0.2);
         width: 300px;
+        color: white;
         padding: 5px;
 
         .list-item{
-            border: 1px solid black;
+            border-radius: 10px;
+            background-color: rgba($color: #000000, $alpha: 0.2);
             padding: 5px;
             display: flex;
             flex-direction: row;
             margin-bottom: 2px;
             cursor: pointer;
+            transition: .3s ease-in-out;
 
             &:hover {
                 background-color: #ddd;
+                color: black;
             }
 
             .list-name {
@@ -92,6 +94,7 @@ $border: 1px solid black;
 
         .active {
             background-color: #fff;
+            color: black;
         }
 
         .sprite-image {

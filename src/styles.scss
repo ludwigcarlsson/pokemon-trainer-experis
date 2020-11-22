@@ -2,13 +2,14 @@
 body {
     background: #888;
     font: 10px;
-    font-family: 'pokemon-font', monospace
+    font-family: 'pokemon-font', monospace;
 }
 
 button {
     background-color: #CC0000;
     color:white;
     transition: 0.5s ease-in-out;
+    font-family: 'pokemon-font', monospace;
     cursor: pointer;
     padding:10px;
     border-radius:4px;
