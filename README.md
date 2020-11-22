@@ -1,5 +1,7 @@
 # PokemonTrainerExperis
 
+This application features a small pokédex where a user can gather information about the pokemons stats, abilities, moves and more!
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
 
 ## Development server
