@@ -20,14 +20,18 @@ export class PokemonComponent implements OnInit {
   public selectedMove: any;
 
   ngOnInit(): void {
-    for (let i = 0; i <= 1 ; i++){
-      this.displayAbilityInformation(this.pokemon.abilities[i].ability.url);
-    }
-    this.displayMoveInformation(this.pokemon.moves[0].move.url);
-    if (this.session.checkLogin()) {
-      this.loginStatus = true; 
-    } else {
-      this.loginStatus = false;
+    if (this.pokemon === undefined) {
+      this.goBack();      
+    } else {    
+      for (let i = 0; i <= 1 ; i++){
+        this.displayAbilityInformation(this.pokemon.abilities[i].ability.url);
+      }
+      this.displayMoveInformation(this.pokemon.moves[0].move.url);
+      if (this.session.checkLogin()) {      
+        this.loginStatus = true; 
+      } else {
+        this.loginStatus = false;
+      }
     }
   }
 
