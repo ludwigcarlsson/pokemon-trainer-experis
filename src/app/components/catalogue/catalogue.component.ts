@@ -14,7 +14,7 @@ export class CatalogueComponent implements OnInit {
   public currentPokemon: any = [];
 
   constructor(private api: ApiService, private router: Router, private share: ShareDataService) { }
-
+    // Fetches and displays pokemons
   async displayCatalogue() {
     try {
       const data = await this.api.fetchAllPokemons();
@@ -27,7 +27,7 @@ export class CatalogueComponent implements OnInit {
       console.log(e);
     }
   }
-
+  // Adds the data for a specific pokemon to a list called pokemons 
   async displayThisPokemon(URL: any) {
     try {
       const data = await this.api.fetchThis(URL)
@@ -54,7 +54,7 @@ export class CatalogueComponent implements OnInit {
   ngOnInit(): void {
     this.displayCatalogue();
   }
-
+  // Displays a specific pokemon chosen in the pokedex
   showPokemon(pokemon: any) {
     const image = document.getElementById("pokemon-image");   
     const element = document.getElementById(pokemon.name);
@@ -70,7 +70,7 @@ export class CatalogueComponent implements OnInit {
 
     image?.setAttribute("src", pokemon.img);
   }
-
+  // This functions sends the user to a more detailed page for a specific pokemon
   goToPokemon(pokemon: any) {
     this.share.setData(pokemon);
     this.router.navigateByUrl(`/pokemon/${pokemon.name}`)

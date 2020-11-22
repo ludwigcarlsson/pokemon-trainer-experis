@@ -12,7 +12,7 @@ export class LogoutComponent implements OnInit {
   public loginStatus: boolean = false;
 
   constructor(private router: Router, private session: SessionService) { }
-
+    // Checks if the user is logged in or not
   ngOnInit(): void {
     if (this.session.checkLogin()) {
       this.loginStatus = true; 
@@ -20,7 +20,8 @@ export class LogoutComponent implements OnInit {
       this.loginStatus = false;
     }
   }
-
+    // This function logs the user out and clears their local storage of the
+    // collected pokemons and their trainer name.
   logOut() {
     localStorage.clear();
     this.router.navigateByUrl('/'); 

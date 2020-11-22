@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class ShareDataService {
 
-  constructor() { }
+  constructor() {}
+
+  // A service for sharing data between components
 
   public pokemon: any;
 
