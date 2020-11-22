@@ -8,9 +8,8 @@
         <div class="size-stats"> BE: {{pokemon.baseExp}} HT: {{pokemon.height}} WT: {{pokemon.weight}}</div>
         <div class="abilities">
             <div class="ability" *ngFor="let ability of abilities">
-                <div class="attack bold center-align">{{ability.name}}</div>
-                <div class="description"><p>{{ability.description}}</p></div> <!--fetch the correct info: fetch this ability and fetch this move-->
-                <div class="border"></div>
+                <div class="ability-name">{{ability.name}}</div>
+                <div class="description"><p>{{ability.description}}</p></div>
             </div>
         </div>
         <button type="button" class="collect-btn" id="collect-btn" [disabled]="!loginStatus" (click)='addPokemonToUserCollection()'>Collect {{pokemon.name}}</button>
