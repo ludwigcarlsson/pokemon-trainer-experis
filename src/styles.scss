@@ -1,14 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background: #888;
+    background: url('https://media.giphy.com/media/j5mdEyURiNkA0/giphy.gif');
+    background-size: cover;
     font: 10px;
-    font-family: 'pokemon-font', monospace
+    font-family: 'pokemon-font', monospace;
 }
 
 button {
     background-color: #CC0000;
     color:white;
     transition: 0.5s ease-in-out;
+    font-family: 'pokemon-font', monospace;
     cursor: pointer;
     padding:10px;
     border-radius:4px;

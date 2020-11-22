@@ -1,17 +1,13 @@
 <div class="page-container">
   <div class="pokedex-container">
-    <div class="trainer-route">
-      <button routerLink="/trainer">{{username}}</button>
-    </div>
-    <div class="logout-btn">
-      <app-logout></app-logout>
-    </div>
-    <h1>Pokédex</h1>
-    <div class="pokedex-information">
-      <div class="own-status">
-        <h5>Own</h5>
-        <img class="own-image" src="#" alt="" />
+    <div class="pokedex-header">
+      <h1 class="pokedex-title">Pokédex</h1>
+      <div class="pokedex-btns">
+        <button routerLink="/trainer">{{username}}</button>
+        <app-logout></app-logout>
       </div>
+    </div>
+    <div class="pokedex-information">
       <div class="image-container">
         <img id="pokemon-image" />
         <button type="button" id="details-btn" (click)="goToPokemon(this.currentPokemon)">See details</button>
