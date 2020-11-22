@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Deployment to Heruko
 
-This web application is deployed to heruko at: 
+This web application is deployed to heruko at: https://pokemon-trainer-experis.herokuapp.com/
 
 ## Development server
 
